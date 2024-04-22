@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <<style>
+    /* Custom styles */
+    @keyframes blink {
+      0% { background-color: rgba(255, 0, 0, 0.1); }
+      50% { background-color: rgba(146, 208, 233, 0.5); }
+      100% { background-color: rgba(0, 243, 243, 0.1); }
+    }
+    .blink {
+      animation: blink 1s infinite;
+    }
+  </style>
+</head>
+<body>
+    <div class="jumbotron flex flex-col justify-center items-center h-screen blink">
+        <div class="container rounded-xl w-1/2 my-5 mx-6 text-center border p-5 bg-white">
+          <div class="birthday-girl text-md font-semibold font-serif">Mau kado dariku gak nih?</div>
+          <p>Jawab yaa</p>
+        </div>
+        <div>
+          <a href="#" class="button bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onclick="giveGift()">Mau dong</a>
+          <a href="#" class="button bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onclick="refuseGift()">Gak Mau</a>
+        </div>
+      </div>
+<div class="container">
+  <!-- Konten tambahan jika diperlukan -->
+</div>
+<script>
+    // Function to show thank you message if user accepts the gift
+    function giveGift() {
+      alert("Makasih sudah mau menerima kado dari aku!");
+    }
+  
+    // Function to show response message if user declines the gift
+    function refuseGift() {
+      alert("Yaudah kalau gak mau 😜.");
+    }
+  </script>
+</body>
+</html>

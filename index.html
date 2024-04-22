@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    @keyframes blink {
+      0% { background-color: rgba(255, 0, 0, 0.1); }
+      50% { background-color: rgba(146, 208, 233, 0.5); }
+      100% { background-color: rgba(0, 243, 243, 0.1); }
+    }
+    .blink {
+      animation: blink 1s infinite;
+    }
+  </style>
+</head>
+<body onload="askNameAndGreet()">
+
+<script>
+  // Function to show popup alert and store user's name
+  function askNameAndGreet() {
+    var name = prompt("Siapa namamu?");
+    if (name != null) {
+      // Place the user's name in the designated div
+      document.getElementById("nama").innerText = "「 ✦ " + name + " ✦ 」";
+    }
+  }
+</script>
+
+<div class="jumbotron flex flex-col justify-center items-center h-screen blink">
+  <div class="container bg-blue-200 rounded-xl w-1/2 my-5 mx-6 text-center border p-5">
+    <div class="font-bold" id="nama">「 ✦ (nama) ✦ 」</div>
+    <div class="birthday-girl text-md font-bold font-serif">Kamu Ulang Tahun Ya Hari Ini!?</div>
+    <p class="font-serif">Selamat Ulang Tahun ya🥳🥳</p>
+  </div>
+  <div>
+    <a href="/next.html" class="button bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Lanjut</a>
+  </div>
+</div>
+
+</body>
+</html>
