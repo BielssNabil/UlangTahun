@@ -20,16 +20,15 @@
 <body>
     <div class="jumbotron flex flex-col justify-center items-center h-screen blink">
         <div class="container rounded-xl w-1/2 my-5 mx-6 text-center border p-5 bg-white">
-          <div class="birthday-girl text-md font-semibold font-serif">Mau kado 🎁 dariku gak nih?😆</div>
-          <p>Jawab yaa</p>
-        </div>
-        <div>
-          <a href="/count.html" class="button bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onclick="giveGift()">Mau dong</a>
-          <a href="#" class="button bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" onclick="refuseGift()">Gak Mau</a>
+          <div class="birthday-girl text-md font-semibold font-serif">Okayyy</div>
+          <p class="font-semibold">Tunggu sebentar ya!!</p>
+          <p class="font-semibold">Dalam waktu 22 detik, Kadonya bakal dikasih🎁</p>
+          <p>⏳</p>
+          <div id="countdown" class="text-lg font-semibold"></div>
         </div>
       </div>
 <div class="container">
-
+  <!-- Konten tambahan jika diperlukan -->
 </div>
 <script>
     // Function to show thank you message if user accepts the gift
@@ -41,6 +40,19 @@
     function refuseGift() {
       alert("Yaudah kalau gak mau 😜.");
     }
+    var countdownElement = document.getElementById("countdown");
+  var count = 1;
+  var intervalId = setInterval(function() {
+    countdownElement.innerText = count;
+    count++;
+    if (count > 22) {
+      clearInterval(intervalId);
+      // Redirect to another page after countdown reaches 22
+      setTimeout(function() {
+        window.location.href = "/next1.html"; // Change this to the URL of the next page
+      }, 1000); // Delay for 1 second before redirecting
+    }
+  }, 1000); // Update every 1 second (1000 milliseconds)
   </script>
 </body>
 </html>
